@@ -99,9 +99,6 @@ export default function Home() {
                         className="hidden"
                         id="imageUpload"
                     />
-                    <label htmlFor="imageUpload">
-                        <Button>Attach Image</Button>
-                    </label>
 
                     <Button onClick={handleSendMessage}>Send</Button>
                 </div>
