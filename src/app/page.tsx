@@ -21,6 +21,16 @@ const foodCategories = [
     'Restaurant 6',
 ]
 
+const healthyFoods = [
+    { title: 'Avocado Salad', description: 'A delicious, nutritious avocado salad with fresh greens and lemon dressing.' },
+    { title: 'Quinoa Bowl', description: 'A protein-packed quinoa bowl with colorful veggies and a light vinaigrette.' },
+    { title: 'Berry Smoothie', description: 'A refreshing smoothie with mixed berries, banana, and almond milk.' },
+    { title: 'Chickpea Wrap', description: 'A healthy wrap filled with chickpeas, fresh veggies, and hummus.' },
+    { title: 'Chickpea Wrap', description: 'A healthy wrap filled with chickpeas, fresh veggies, and hummus.' },
+    { title: 'Chickpea Wrap', description: 'A healthy wrap filled with chickpeas, fresh veggies, and hummus.' },
+]
+
+
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState(foodCategories[0])
     const [messages, setMessages] = useState<{ text: string; image?: string }[]>([])
@@ -45,9 +55,9 @@ export default function Home() {
 
     return (
         <div className='flex'>
-            <div>
+            <div className='flex'>
                 <SidebarProvider>
-                    <div className="flex h-screen bg-gray-100">
+                    <div className="flex h-screen bg-green-600">
                         <Sidebar className="border-r">
                             <SidebarHeader className="px-4 py-2">
                                 <h2 className="text-xl font-bold">Restaurant Categories</h2>
@@ -69,6 +79,22 @@ export default function Home() {
                         </Sidebar>
                     </div>
                 </SidebarProvider>
+                <div className='w-96'>
+                    <div className='mt-3 text-lg font-bold whitespace-nowrap'>
+                        The 35 Healthiest Foods to Eat Every Day
+                    </div>
+                    <div className="bg-green-50 p-8 rounded shadow-md mb-4">
+                        <h2 className="text-lg font-semibold mb-3 text-green-700">Healthy Foods</h2>
+                        <div className="space-y-3">
+                            {healthyFoods.map((food, index) => (
+                                <div key={index} className="p-3 bg-white rounded border border-green-300">
+                                    <h3 className="text-md font-medium text-green-600">{food.title}</h3>
+                                    <p className="text-sm text-gray-700">{food.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="flex-1 flex flex-col h-screen p-4 bg-white">
                 <div className="text-xl font-bold mb-4">Jorhon AI</div>
